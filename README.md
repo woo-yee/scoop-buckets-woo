@@ -2,4 +2,4 @@
 scoop bucket add woo-yee https://github.com/woo-yee/scoop-buckets-woo
 
 # application's name
-PotPlayer
+to updating
