@@ -1,2 +1,2 @@
 # scoop-buckets-woo
-scoop buckets edit by woo-yee
+scoop buckets add woo-yee
