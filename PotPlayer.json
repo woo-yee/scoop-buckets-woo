@@ -1,14 +1,14 @@
 {
     "version": "1.7.19955",
     "description": "PotPlayer. A multimedia software player developed for the Microsoft Windows operating system.",
-    "homepage": "https://potplayer.daum.net/",
+    "homepage": "https://daumpotplayer.com/",
     "license": {
         "identifier": "Freeware",
         "url": "https://potplayer.daum.net/publicRelation"
     },
     "architecture": {
         "64bit": {
-            "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/20190731_1.7.19955/PotPlayerSetup64.exe#/cosi.7z",
+            "url": "https://daumpotplayer.com/wp-content/uploads/2019/08/PotPlayerSetup64.exe",
             "hash": "3df6733831c302b31cf43bd6fb12745644ee32a85bff7314a45bc271b9725c6a",
             "shortcuts": [
                 [
@@ -22,7 +22,7 @@
             ]
         },
         "32bit": {
-            "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/20190731_1.7.19955/PotPlayerSetup.exe#/cosi.7z",
+            "url": "https://daumpotplayer.com/wp-content/uploads/2019/08/PotPlayerSetup.exe",
             "hash": "b4b130adf74b9b3d1f9b4b5d183e65179c0929f6efc90e7a1ad0f76193541a11",
             "shortcuts": [
                 [
@@ -83,16 +83,16 @@
         "PotPlayerMini64.ini"
     ],
     "checkver": {
-        "url": "https://potplayer.daum.net/update.html?lang=en&bit",
+        "url": "https://daumpotplayer.com/wp-content/update.html?lang=en&bit",
         "regex": "\\[([\\d.]+)\\]\\s+(?<year>\\d{4})/(?<month>\\d{2})/(?<day>\\d{2})"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/$matchYear$matchMonth$matchDay_$version/PotPlayerSetup64.exe#/cosi.7z"
+                "url": "https://daumpotplayer.com/wp-content/uploads/$matchYear$matchMonth$matchDay_$version/PotPlayerSetup64.exe"
             },
             "32bit": {
-                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/$matchYear$matchMonth$matchDay_$version/PotPlayerSetup.exe#/cosi.7z"
+                "url": "https://daumpotplayer.com/wp-content/uploads/$matchYear$matchMonth$matchDay_$version/PotPlayerSetup.exe"
             }
         }
     }
