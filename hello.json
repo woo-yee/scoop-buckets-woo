@@ -1,34 +1,49 @@
-﻿{
-    "homepage": "https://dl.pconline.com.cn/download/51960-1.html",
-    "version": "1.7.19953",
-    "description": "PotPlayer is a great alternative file manager for Windows with a amazing Quadro-View technique. ",
-    "license": {
-        "identifier": "Freeware"
-    },
-    "extract_dir": "PotPlayer",
+{
+    "homepage": "https://www.ccleaner.com/ccleaner",
+    "version": "1.07.19.1015",
+    "license": "Freeware",
+    "description": "Number-one tool for cleaning your PC. 中文版, 基于版本5.40.6411, 由飞扬时空汉化.",
+    "url": "https://master.dl.sourceforge.net/project/tomato-extra/apps/CCleaner540-1.07.19.1015.7z",
+    "hash": "2eaa3e11e29fa98cd6a2b0c30a062460eeb0eb952077dc769c5e037d92bd0ee1",
     "architecture": {
         "64bit": {
-            "url": "https://dlc2.pconline.com.cn/filedown_51960_12621406/WOcvjZxc/PotPlayerSetup64.exe",
-            "hash": "d8476b443ffa9d752e9aa065761057e52e3fb7383ff37288fb9c71f8efabddaf",
-            "installer": {
-                "script": [
-                    "mv \"<1></1>dir/PotPlayer_x64.exe\" \"$dir/PotPlayer.exe\"",
-                    "New-Item -Path $dir\\start.qdr -ItemType File"
+            "bin": [
+                [
+                    "CCleaner64.exe",
+                    "CCleaner"
                 ]
-            }
+            ],
+            "shortcuts": [
+                [
+                    "CCleaner64.exe",
+                    "CCleaner"
+                ]
+            ]
         },
+        "32bit": {
+            "bin": "CCleaner.exe",
+            "shortcuts": [
+                [
+                    "CCleaner.exe",
+                    "CCleaner"
+                ]
+            ]
+        }
     },
-    "persist": [
-        "Favoriten",
-        "start.qdr",
-        "PotPlayer.ini"
+    "pre_install": [
+        "if(!(Test-Path \"$persist_dir\\ccleaner.ini\")) {",
+        "   Set-Content \"$dir\\ccleaner.ini\" (@('[Options]', 'Monitoring=0', 'SystemMonitoring=0', 'UpdateAuto=0', 'UpdateNotify=0', 'UpdateCheck=0', 'UpdateBackground=0', 'HelpImproveCCleaner=0') -join \"`r`n\") -Encoding ASCII",
+        "}"
     ],
-    "bin": "PotPlayer.exe",
-    "shortcuts": [
-        [
-            "PotPlayer.exe",
-            "PotPlayer"
-        ]
-    ],
-
+    "persist": "ccleaner.ini",
+    "checkver": {
+        "url": "https://sourceforge.net/projects/tomato-extra/files/apps/",
+        "re": "CCleaner540-([\\d\\.]+).7z"
+    },
+    "autoupdate": {
+        "url": "https://master.dl.sourceforge.net/project/tomato-extra/apps/CCleaner540-$version.7z",
+        "hash": {
+            "url": "https://master.dl.sourceforge.net/project/tomato-extra/apps/sha256sum.txt"
+        }
     }
+}
